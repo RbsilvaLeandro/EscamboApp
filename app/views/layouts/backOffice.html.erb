@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>BackOffice - EscamboApp</title>
+	<%= stylesheet_link_tag    'application', media: 'all' %>
+	<%= stylesheet_link_tag    'backOffice', media: 'all' %>
+	<%= javascript_include_tag 'application'  %>
+	<%= javascript_include_tag 'backOffice'  %>	
+	<%= csrf_meta_tags %>  
+	
+</head>
+<body>	
+	<div id="wrapper">
+		<%= render partial:"layouts/backOffice_shared/navigation" %>
+		<!-- Page Content -->
+		<div id="page-wrapper">
+			<div class="container-fluid">
+				<div class="row">		
+					<!-- /.col-lg-12 -->
+					<div class=col-sm-12>
+						<%= yield %>
+					</div>	
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container-fluid -->
+		</div>
+		<!-- /#page-wrapper -->			
+	</div>
+
+	<% if notice %>
+	<script>
+		$.notify("<%= notice %>","success");
+	</script>
+	<% end %>	
+
+
+	<% if alert %>
+	<script>
+		$.notify("<%= alert %>","error");
+	</script>
+	<% end %>
+</body>
+
+</html>
