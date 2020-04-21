@@ -1,4 +1,1 @@
-# EscamboApp
-# EscamboApp
-# Primeira Versao
-# EscamboApp
+Projeto CRUD em Ruby on Rails 
